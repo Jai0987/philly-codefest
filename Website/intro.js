@@ -34,6 +34,7 @@ anime.timeline({ loop: false })
 const canvas = document.querySelector('canvas')
 const renderer = new THREE.WebGLRenderer({ canvas })
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+import { PythonShell } from 'python-shell'
 const scene = new THREE.Scene()
 
 // Add lights
@@ -54,3 +55,5 @@ function animate() {
 	requestAnimationFrame(animate)
 	renderer.render(scene, camera)
 }
+
+runPy()

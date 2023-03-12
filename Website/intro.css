@@ -89,7 +89,7 @@ body {
 
 #light-zone img {
 	position: relative;
-	width: 60%;
+	width: 50%;
 	top: 50%;
 	opacity: 0;
 	transform: translateY(-50%);
