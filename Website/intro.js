@@ -30,30 +30,3 @@ anime.timeline({ loop: false })
 		duration: 1000,
 		easing: 'easeOutExpo',
 	})
-
-const canvas = document.querySelector('canvas')
-const renderer = new THREE.WebGLRenderer({ canvas })
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-import { PythonShell } from 'python-shell'
-const scene = new THREE.Scene()
-
-// Add lights
-const light = new THREE.AmbientLight(0xffffff, 1)
-scene.add(light)
-
-const loader = new THREE.GLTFLoader()
-
-loader.load('scene.gltf', function (gltf) {
-	const model = gltf.scene
-	scene.add(model)
-	animate()
-})
-
-camera.position.z = 5
-
-function animate() {
-	requestAnimationFrame(animate)
-	renderer.render(scene, camera)
-}
-
-runPy()
